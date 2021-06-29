@@ -1,7 +1,7 @@
 ---
 title: Vote For Alex
-author: content/authors/napolean.md
+author: content/authors/pedro.md
 _template: article
 ---
 
-ALEX: When you use Tina's GraphQL forms, we know about all of the relationships in your content, this allows us to keep your content in-sync with your form state. Try changing the author in the sidebar, notice the author data changes to reflect your new author!
+PEDRO: When you use Tina's GraphQL forms, we know about all of the relationships in your content, this allows us to keep your content in-sync with your form state. Try changing the author in the sidebar, notice the author data changes to reflect your new author!
