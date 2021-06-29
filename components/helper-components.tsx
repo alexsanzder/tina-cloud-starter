@@ -25,10 +25,10 @@ export const Wrapper = (props: { children: React.ReactNode; data: object }) => {
           <RawRenderer data={props.data} />
         </div>
       </div>
-      <style global jsx>
+      {/* <style global jsx>
         {GlobalStyles}
       </style>
-      <style jsx>{PageStyles}</style>
+      <style jsx>{PageStyles}</style> */}
     </>
   );
 };
@@ -233,10 +233,7 @@ export const SidebarPlaceholder = () => (
       so you can start editing.
     </p>
     <p>
-      <a
-        href="https://tina.io/docs/tina-cloud/client/"
-        target="_blank"
-      >
+      <a href="https://tina.io/docs/tina-cloud/client/" target="_blank">
         <span className="emoji">📖</span> Client Setup Guide
       </a>
     </p>

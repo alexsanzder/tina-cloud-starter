@@ -1,10 +1,12 @@
+import "@/styles/tailwind.css";
+import type { AppProps } from "next/app";
+
 import dynamic from "next/dynamic";
 import Link from "next/link";
-
 import { EditProvider, setEditing, useEditState } from "../utils/editState";
 
 // InnerApp that handles rendering edit mode or not
-function InnerApp({ Component, pageProps }) {
+const InnerApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const { edit } = useEditState();
   if (edit) {
     // Dynamically load Tina only when in edit mode so it does not affect production
@@ -25,9 +27,9 @@ function InnerApp({ Component, pageProps }) {
       <EditToggle isInEditMode={true} />
     </>
   );
-}
+};
 
-const EditToggle = (isInEditMode) => {
+const EditToggle = (isInEditMode: boolean) => {
   const { edit, setEdit } = useEditState();
   return (
     <>
@@ -37,27 +39,10 @@ const EditToggle = (isInEditMode) => {
             onClick={() => {
               setEdit(!edit);
             }}
-            className="editLink"
+            className="fixed top-0 right-0"
           >
             {edit ? "Exit edit mode" : "Enter edit mode"}
           </button>
-          <style jsx>{`
-            .editLink {
-              border: none;
-              position: fixed;
-              top: 0;
-              right: 0;
-              background: var(--orange);
-              color: var(--white);
-              padding: 0.5rem 0.75rem;
-              font-weight: bold;
-              text-decoration: none;
-              display: inline-block;
-              border-bottom-left-radius: 0.5rem;
-              cursor: pointer;
-              font-size: 20px;
-            }
-          `}</style>
         </>
       )}
     </>
@@ -65,12 +50,12 @@ const EditToggle = (isInEditMode) => {
 };
 
 // Our app is wrapped with edit provider
-function App(props) {
+const App = (props: any) => {
   return (
     <EditProvider>
       <InnerApp {...props} />
     </EditProvider>
   );
-}
+};
 
 export default App;

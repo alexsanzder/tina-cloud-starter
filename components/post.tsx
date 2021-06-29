@@ -16,18 +16,18 @@ export const BlogPost = (props: Article_Doc_Data) => {
 
 const AuthorSnippet = (props: { author: Authors_Document }) => {
   return (
-    <div className="snippet">
+    <div className="flex items-center">
       {props.author && (
         <>
           <img
-            className="avatar"
+            className="h-12 mr-3 w-12"
             title={props.author.data.name}
             src={props.author.data.avatar}
           />
           <h3>By {props.author.data.name}</h3>
         </>
       )}
-      <style jsx>{`
+      {/* <style jsx>{`
         .snippet {
           display: flex;
           align-items: center;
@@ -41,7 +41,7 @@ const AuthorSnippet = (props: { author: Authors_Document }) => {
           background-size: cover;
           background-position: center;
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 };
