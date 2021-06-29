@@ -1,5 +1,5 @@
 ---
-title: Vote For Alex
+title: Vote For Pedro
 author: content/authors/pedro.md
 _template: article
 ---
